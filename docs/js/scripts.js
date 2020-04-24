@@ -1,4 +1,4 @@
-const url = 'https://api.covid19api.com/summary'
+const url = 'https://api.   .com/summary'
 const tBody = document.querySelector('tbody')
 let globalStats = document.getElementById('globalStats')
 let statsByCountry = document.getElementById('statsByCountry')

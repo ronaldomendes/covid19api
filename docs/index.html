@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="red darken-1">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">COVID-19 API</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="row">
+            <h4 class="center">Global Informations About COVID-19</h4>
+            <div class="divider"></div>
+            <canvas id="globalStats" style="display: block; height: 90px;" height="90"></canvas>
+        </div>
+        <div class="row">
+            <h4 class="center">COVID-19 Stats by Country</h4>
+            <div class="divider"></div>
+            <label>Countries With COVID-19 Cases</label>
+            <select class="browser-default" id="selectCountry">
+                <option value="" disabled selected>See a Country</option>
+            </select>
+            <canvas id="statsByCountry" style="display: block; height: 90px;" height="90"></canvas>
+        </div>
+        <div class="row">
+            <label>Countries With NO COVID-19 Cases</label>
+            <select class="browser-default" id="noCases">
+                <option value="" disabled selected>See a Country</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <table class="striped responsive-table">
+                <h4 class="center">Stats About the Pandemic COVID-19 (All Countries)</h4>
+                <div class="divider"></div>
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>New Confirmed</th>
+                        <th>Total Confirmed</th>
+                        <th>New Deaths</th>
+                        <th>Total Deaths</th>
+                        <th>New Recovered</th>
+                        <th>Total Recovered</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>

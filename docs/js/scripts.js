@@ -10,14 +10,12 @@ const buildChart = (lines) => {
     let chart = new Chart(globalStats, {
         type: 'horizontalBar',
         data: {
-            labels: ['New Confirmed', 'Total Confirmed', 'New Deaths', 'Total Deaths',
-                'New Recovered', 'Total Recovered'],
+            labels: ['Confirmados', 'Mortes', 'Recuperados'],
             datasets: [{
-                label: 'COVID-19 Global Stats',
-                backgroundColor: 'red',
+                label: 'Estatísticas globais',
+                backgroundColor: ['red', 'purple', 'green'],
                 borderColor: 'white',
-                data: [lines.NewConfirmed, lines.TotalConfirmed, lines.NewDeaths, lines.TotalDeaths,
-                lines.NewRecovered, lines.TotalRecovered]
+                data: [lines.TotalConfirmed, lines.TotalDeaths, lines.TotalRecovered]
             }]
         },
         options: {}
@@ -51,7 +49,6 @@ const noCovidCases = (lines) => {
 }
 
 const withCovidCases = (lines) => {
-    let result = ''
     result = lines.filter(data => data.TotalConfirmed !== 0)
     return result.forEach(data => {
         const lineSelect = `<option value="${data.Country}">${data.Country}</option>`
@@ -65,14 +62,12 @@ const covidStatsByCountry = (lines, selectedCountry) => {
     let chart = new Chart(statsByCountry, {
         type: 'horizontalBar',
         data: {
-            labels: ['New Confirmed', 'Total Confirmed', 'New Deaths', 'Total Deaths',
-                'New Recovered', 'Total Recovered'],
+            labels: ['Confirmados', 'Mortes', 'Recuperados'],
             datasets: [{
-                label: `COVID-19 Stats (${res[0].Country})`,
-                backgroundColor: 'red',
+                label: `Estatísticas sobre a COVID-19 - ${res[0].Country}`,
+                backgroundColor: ['red', 'purple', 'green'],
                 borderColor: 'white',
-                data: [res[0].NewConfirmed, res[0].TotalConfirmed, res[0].NewDeaths, res[0].TotalDeaths,
-                res[0].NewRecovered, res[0].TotalRecovered]
+                data: [res[0].TotalConfirmed, res[0].TotalDeaths, res[0].TotalRecovered]
             }]
         },
         options: {}

@@ -20,39 +20,39 @@
     <main class="container">
 
         <div class="row">
-            <h4 class="center">Global Stats About COVID-19</h4>
+            <h4 class="center">Estatísticas globais sobre a COVID-19</h4>
             <div class="divider"></div>
-            <canvas id="globalStats" style="display: block; height: 90px;" height="90"></canvas>
+            <canvas id="globalStats" style="display: block; height: 70px;" height="70"></canvas>
         </div>
         <div class="row">
-            <h4 class="center">COVID-19 Stats by Country</h4>
+            <h4 class="center">Estatísticas por país - COVID-19</h4>
             <div class="divider"></div>
-            <label>Countries With COVID-19 Cases</label>
+            <label>Países com casos da COVID-19</label>
             <select class="browser-default" id="selectCountry">
-                <option value="" disabled selected>See a Country</option>
+                <option value="" disabled selected>Selecione um país</option>
             </select>
-            <canvas id="statsByCountry" style="display: block; height: 90px;" height="90"></canvas>
+            <canvas id="statsByCountry" style="display: block; height: 70px;" height="70"></canvas>
         </div>
         <div class="row">
-            <label>Countries With NO COVID-19 Cases</label>
+            <label>Países sem casos da COVID-19 (Apenas o nome)</label>
             <select class="browser-default" id="noCases">
-                <option value="" disabled selected>See a Country</option>
+                <option value="" disabled selected>Selecione um país</option>
             </select>
         </div>
 
         <div class="row">
-            <table class="striped responsive-table">
-                <h4 class="center">Stats About the Pandemic COVID-19 (All Countries)</h4>
+            <table class="striped responsive-table horizontal">
+                <h4 class="center">Países com casos da COVID-19</h4>
                 <div class="divider"></div>
                 <thead>
                     <tr>
-                        <th>Country</th>
-                        <th>New Confirmed</th>
-                        <th>Total Confirmed</th>
-                        <th>New Deaths</th>
-                        <th>Total Deaths</th>
-                        <th>New Recovered</th>
-                        <th>Total Recovered</th>
+                        <th>País</th>
+                        <th>Novos Confirmados</th>
+                        <th>Total Confirmados</th>
+                        <th>Novas Mortes</th>
+                        <th>Total Mortes</th>
+                        <th>Novos Recuperados</th>
+                        <th>Total Recuperados</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

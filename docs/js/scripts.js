@@ -25,15 +25,19 @@ const buildChart = (lines) => {
 
 const buildLineTable = (lines) => {
     let result = lines.filter((data) => data.TotalConfirmed !== 0)
+
+    result.sort((a, b) => {
+        if (a.TotalConfirmed > b.TotalConfirmed) return -1
+        if (a.TotalConfirmed < b.TotalConfirmed) return 1
+        return 0
+    })
+
     result.forEach((line, index) => {
         const lineTable =
             `<tr>
                 <td>${line.Country}</td>
-                <td>${line.NewConfirmed}</td>
                 <td>${line.TotalConfirmed}</td>
-                <td>${line.NewDeaths}</td>
                 <td>${line.TotalDeaths}</td>
-                <td>${line.NewRecovered}</td>
                 <td>${line.TotalRecovered}</td>        
             </tr>`
         tBody.insertAdjacentHTML('beforeend', lineTable)

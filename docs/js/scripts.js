@@ -24,7 +24,7 @@ const buildChart = (lines) => {
 }
 
 const buildLineTable = (lines) => {
-    let result = lines.filter((data) => data.TotalConfirmed !== 0)
+    let result = lines.filter((data) => data.TotalConfirmed)
 
     result.sort((a, b) => {
         if (a.TotalConfirmed > b.TotalConfirmed) return -1
@@ -41,14 +41,6 @@ const buildLineTable = (lines) => {
                 <td>${line.TotalRecovered}</td>        
             </tr>`
         tBody.insertAdjacentHTML('beforeend', lineTable)
-    })
-}
-
-const noCovidCases = (lines) => {
-    let result = lines.filter(data => data.TotalConfirmed === 0)
-    return result.forEach(data => {
-        const lineSelect = `<option value="${data.Country}">${data.Country}</option>`
-        noCases.insertAdjacentHTML('beforeend', lineSelect)
     })
 }
 
@@ -85,7 +77,6 @@ window.onload = () => {
         .then(resp => {
             buildLineTable(resp.Countries)
             buildChart(resp.Global)
-            noCovidCases(resp.Countries)
             withCovidCases(resp.Countries)
             allCountries = resp.Countries
         })
